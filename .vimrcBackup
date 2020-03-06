@@ -1,0 +1,18 @@
+set nu
+set hlsearch
+colorscheme delek 
+syntax on
+
+"call plug#begin('~/.vim/plugged')
+"Plug 'itchyny/lightline.vim'
+"call plug#end()
+
+"neobundle
+if has('vim_starting')
+set nocompatible    
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
+filetype plugin indent on
+endif
