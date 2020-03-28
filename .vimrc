@@ -237,9 +237,9 @@
     let &tags = &tags . ',' . gitroot . '/.git/tags'
   endif
 
-  colorscheme PaperColor
+  " colorscheme PaperColor
   " colorscheme delek 
-  " colorscheme xcodedark
+  colorscheme xcodedark
 
   set t_Co=256
   set nofoldenable                  " Auto fold code
@@ -264,6 +264,7 @@
   syntax on
   highlight CursorLine term=reverse
   highlight CursorColumn term=reverse
+  highlight Search term=standout ctermfg=0 ctermbg=3
   " set the default value of updatetime to 100ms
   " set updatetime=100
 "}
@@ -527,6 +528,7 @@
 
   "gitgutter
     let g:gitgutter_max_signs=900
+    " You can jump between hunks with [c and ]c.You can preview, stage, and undo hunks with <leader>hp, <leader>hs, and <leader>hu respectively.
 
   "editorconfig-vim
     let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
@@ -858,5 +860,6 @@
   au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
   " 让配置变更立即生效
   autocmd BufWritePost $MYVIMRC source $MYVIMRC"
+  " autocmd BufWritePost *.ts call system("ctags -R")
 
 "}

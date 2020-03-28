@@ -1,5 +1,10 @@
 --ignore-dir=.idea/
 --ignore-dir=node_modules/
+--ignore-dir=dist/
+--ignore-dir=.temp/
+--ignore-file=is:tags
+--ignore-file=is:package-lock.json
+--ignore-file=ext:lock
 
 --type-add
 css=.scss,.sass,.less
