@@ -98,6 +98,7 @@
     "Plugin 'Lokaltog/vim-easymotion'
     "Plugin 'justinmk/vim-dirvish'
     "Plugin 'ddollar/nerdcommenter'
+     Plugin 'scrooloose/nerdcommenter'   " commenter: ;cc ;cu 
     "Plugin 'AndrewRadev/splitjoin.vim'
     "Plugin 'davidhalter/jedi-vim'
     "Plugin 'ervandew/supertab'
@@ -235,6 +236,7 @@
   if gitroot != ''
     let &tags = &tags . ',' . gitroot . '/.git/tags'
   endif
+
   colorscheme PaperColor
   " colorscheme delek 
   " colorscheme xcodedark
@@ -267,7 +269,14 @@
 "}
 
 "{Mappings
-  let mapleader=','
+  " let mapleader=','
+  let mapleader=';' "注释\修改为；leader \ change to ;: ;cc comment ;cu uncomment
+  "<leader>cc   加注释
+  "<leader>cu   解开注释
+  "<leader>c<space>  加上/解开注释, 智能判断
+  "<leader>cy   先复制, 再注解(p可以进行黏贴)
+  " 注释的时候自动加个空格, 强迫症必配
+  let g:NERDSpaceDelims=1
   nnoremap <Leader>2 :set tabstop=2  softtabstop=2 shiftwidth=2<CR>
   nnoremap <Leader>4 :set tabstop=4  softtabstop=4 shiftwidth=4<CR>
   nnoremap <Leader>eg :e ++enc=gbk<CR>
@@ -417,6 +426,9 @@
     let g:NERDTreeShowLineNumbers=1
     let g:NERDTreeChDirMode=2
     let NERDTreeWinPos="left"
+    let NERDTreeIgnore=['node_modules', 'target'] "ignore files in NERDTree
+    " Ctrl+N 打开/关闭
+    map <C-n> :NERDTreeToggle<CR>
 
   "noscripter/tabman.vim
     let g:tabman_side="right"
