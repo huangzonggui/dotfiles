@@ -272,12 +272,6 @@
 "{Mappings
   " let mapleader=','
   let mapleader=';' "注释\修改为；leader \ change to ;: ;cc comment ;cu uncomment
-  "<leader>cc   加注释
-  "<leader>cu   解开注释
-  "<leader>c<space>  加上/解开注释, 智能判断
-  "<leader>cy   先复制, 再注解(p可以进行黏贴)
-  " 注释的时候自动加个空格, 强迫症必配
-  let g:NERDSpaceDelims=1
   nnoremap <Leader>2 :set tabstop=2  softtabstop=2 shiftwidth=2<CR>
   nnoremap <Leader>4 :set tabstop=4  softtabstop=4 shiftwidth=4<CR>
   nnoremap <Leader>eg :e ++enc=gbk<CR>
@@ -586,15 +580,15 @@
     let g:used_javascript_libs = 'react,angularjs,flux'
 
   "pangloss/vim-javascript
-    let g:javascript_conceal_function   = "ƒ"
-    let g:javascript_conceal_null       = "ø"
-    let g:javascript_conceal_this       = "@"
-    let g:javascript_conceal_return     = "⇚"
-    let g:javascript_conceal_undefined  = "¿"
-    let g:javascript_conceal_NaN        = "ℕ"
-    let g:javascript_conceal_prototype  = "¶"
-    let g:javascript_conceal_static     = "•"
-    let g:javascript_conceal_super      = "Ω"
+    " let g:javascript_conceal_function   = "ƒ"
+    " let g:javascript_conceal_null       = "ø"
+    " let g:javascript_conceal_this       = "@"
+    " let g:javascript_conceal_return     = "⇚"
+    " let g:javascript_conceal_undefined  = "¿"
+    " let g:javascript_conceal_NaN        = "ℕ"
+    " let g:javascript_conceal_prototype  = "¶"
+    " let g:javascript_conceal_static     = "•"
+    " let g:javascript_conceal_super      = "Ω"
 
   "groenewege/vim-less
     autocmd BufNewFile,BufRead *.less set filetype=less
@@ -634,6 +628,29 @@
         \ 'jump':  1,
         \ }
 
+  "scrooloose/nerdcommenter
+  "<leader>cc   加注释
+  "<leader>cu   解开注释
+  "<leader>c<space>  加上/解开注释, 智能判断
+  "<leader>cy   先复制, 再注解(p可以进行黏贴)
+  " <leader>cc // 注释
+  " <leader>cm 只用一组符号注释
+  " <leader>cA 在行尾添加注释
+  " <leader>c$ /* 注释 */
+  " <leader>cs /* 块注释 */
+  " <leader>cy 注释并复制
+  " <leader>c<space> 注释/取消注释
+  " <leader>ca 切换　// 和 /* */
+  " <leader>cu 取消注释
+
+  " 注释的时候自动加个空格, 强迫症必配
+		let g:NERDSpaceDelims=1
+    let g:NERDDefaultAlign = 'left'
+  " 自定义注释格式
+    " let g:NERDCustomDelimiters = {
+    "   \ 'javascript': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' },
+    "   \ 'less': { 'left': '/**', 'right': '*/' }
+    " \ }
 "}
 
 "{helper functions
@@ -644,7 +661,7 @@
     if l:tabstop > 0
       let &l:sts = l:tabstop
       let &l:ts = l:tabstop
-      let &l:sw = l:tabstop
+      let &l:sw = l:tabstop/NERDSpaceDelims
     endif
     call SummarizeTabs()
   endfunction
