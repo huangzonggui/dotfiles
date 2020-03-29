@@ -48,7 +48,7 @@ yarn.lock
 .cache/
 .cocoapods/
 .code-push.config
-.config/
+/* .config/ */
 /* .ctags */
 .cups/
 .dart/
