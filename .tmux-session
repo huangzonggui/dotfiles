@@ -1,1 +1,16 @@
-aa-main-test	imed	/Users/dason/Documents/git/imed
+aa-main	kibana	/Users/dason/Development/kibana/plugins/voda_health
+aa-main	elasticsearch	/usr/local/Cellar/elasticsearch-full/7.8.0/libexec
+aa-main	imed	/Users/dason/Documents/git/imed
+aa-main	git	/Users/dason/Documents/git
+aa-old-code	arq-booking	/Users/dason/Documents/git/arq-booking/booking
+aa-old-code	uniq	/Users/dason/Documents/git/uniq-app
+aa-old-code	nodejs-mock-server	/Users/dason/Documents/git/nodejs-mock-service
+aa-old-code	arq-wechat-mini	/Users/dason/Documents/git/arq-wechat-mini
+aa-old-code	arq-console	/Users/dason/Documents/git/arq-console
+aa-old-code	uniq-web	/Users/dason/Documents/git/uniq-app/uniq-web
+aa-old-code	ewallet	/Users/dason/Documents/git/ewallet
+aa-socketIo	socket-chat-client	/Users/dason/Documents/test/socket-chat-client
+aa-socketIo	socket-chat-example	/Users/dason/Documents/test/socket-chat-example
+aa-template-code	react	/Users/dason/Documents/test/template
+aa-template-code	zsh	/Users/dason/Documents/test/react-app-test-eject
+dotFiles	arq-console	/Users/dason/Development/natapp
