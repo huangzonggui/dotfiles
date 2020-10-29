@@ -3,7 +3,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export GRADLE_HOME=/Applications/Android\ Studio.app/Contents/gradle/gradle-4.4
 export PATH=$PATH:$GRADLE_HOME/bin
-export PS1="\[\033[01;31;01m\][\u@ \w]\$\[\033[01;00;00m\]"
+# export PS1="\[\033[01;31;01m\][\u@ \w]\$\[\033[01;00;00m\]"
 export M2_HOME=/Users/dason/Documents/devtools/apache-maven-3.6.1 
 export FLUTTER_HOME=/Users/dason/development/flutter
 #export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
@@ -13,7 +13,7 @@ export PATH=$PATH:$FLUTTER_HOME/bin/cache/dart-sdk/bin
 export PATH=$PATH:$FLUTTER_HOME/.pub-cache/bin
 
 #GOROOT
-export GOROOT=/usr/local/Cellar/go/1.13.4/libexec
+export GOROOT=/usr/local/Cellar/go/1.15.2/libexec
 #GOPATH
 export GOPATH=$HOME/go
 #GOPATH bin
@@ -23,12 +23,12 @@ export PATH=$PATH:$GOROOT/bin
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+# PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 # default python2
-#alias python="/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6"
+# alias python="/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6"
 alias lsa="ls -alt"
-alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
-alias del="rmtrash"
+# alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+# alias del="rmtrash"
 
 alias gb="git branch -a"
 alias gnb="git checkout -b"

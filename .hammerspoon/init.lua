@@ -1,3 +1,4 @@
+require "cmdHelpArray"
 hs.hotkey.alertDuration = 0
 hs.hints.showTitleThresh = 0
 hs.window.animationDuration = 0
@@ -27,6 +28,10 @@ hsreload_keys = hsreload_keys or {{"cmd", "shift", "ctrl"}, "R"}
 if string.len(hsreload_keys[2]) > 0 then
     hs.hotkey.bind(hsreload_keys[1], hsreload_keys[2], "Reload Configuration", function() hs.reload() end)
 end
+
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function() 
+    hs.notify.new({title="Hammerspoon", informativeText="hello"}):send()
+end)
 
 -- ModalMgr Spoon must be loaded explicitly, because this repository heavily relies upon it.
 hs.loadSpoon("ModalMgr")
@@ -77,6 +82,7 @@ if not hsapp_list then
         {key = 'f', name = 'Finder'},
         {key = 's', name = 'Safari'},
         {key = 't', name = 'Terminal'},
+        {key = 'w', name = 'WebStorm'},
         {key = 'v', id = 'com.apple.ActivityMonitor'},
         {key = 'y', id = 'com.apple.systempreferences'},
     }
@@ -209,6 +215,29 @@ if string.len(hsman_keys[2]) > 0 then
         hs.doc.hsdocs.forceExternalBrowser(true)
         hs.doc.hsdocs.moduleEntitiesInSidebar(true)
         hs.doc.hsdocs.help()
+    end)
+end
+
+function table_leng(t)
+  local leng=0
+  for k, v in pairs(t) do
+    leng=leng+1
+  end
+  return leng;
+end
+
+hhot_keys = hhot_keys or {"alt", "E"}
+if string.len(hhot_keys[2]) > 0 then
+    spoon.ModalMgr.supervisor:bind(hhot_keys[1], hhot_keys[2], "Show Hot Key", function()
+
+        spoon.ModalMgr:new("cmdHelp")
+        local cmodal = spoon.ModalMgr.modal_list["cmdHelp"]
+
+        for i =1, table_leng(cmdHelpArray) do
+            cmodal:bind('', 'escape', cmdHelpArray[i], function() spoon.ModalMgr:deactivate({"cmdHelp"}) end)
+        end
+
+        spoon.ModalMgr:activate({"cmdHelp"}, "#0F6347", true)
     end)
 end
 

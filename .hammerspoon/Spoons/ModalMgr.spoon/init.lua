@@ -80,6 +80,7 @@ function obj:toggleCheatsheet(iterList, force)
             if type(v) == "string" then
                 -- It appears to be idList
                 for _, m in ipairs(obj.modal_list[v].keys) do
+                    print(obj.modal_list[v].keys)
                     table.insert(keys_pool, m.msg)
                 end
             elseif type(i) == "string" then
