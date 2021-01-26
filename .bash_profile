@@ -7,6 +7,9 @@ export PATH=$PATH:$GRADLE_HOME/bin
 export M2_HOME=/Users/dason/Documents/devtools/apache-maven-3.6.1 
 export FLUTTER_HOME=/Users/dason/development/flutter
 #export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH:.
+export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
 export PATH=$PATH:$M2_HOME/bin
 export PATH=$PATH:$FLUTTER_HOME/bin
 export PATH=$PATH:$FLUTTER_HOME/bin/cache/dart-sdk/bin
@@ -20,6 +23,14 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 #GOPATH root bin
 export PATH=$PATH:$GOROOT/bin
+
+export MYSQL_HOME=/usr/local/mysql
+export PATH=$PATH:$MYSQL_HOME/bin
+
+alias start_mysql='sudo $MYSQL_HOME/bin/mysqld_safe &'
+alias stop_mysql='sudo $MYSQL_HOME/bin/mysqladmin shutdown -p'
+
+
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
